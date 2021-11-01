@@ -86,7 +86,7 @@ memory requested or calls longjmp, so callers don't have to check.
 #define YES 1
 #define BOOL int
 
-#define MAXPATHLEN 256
+//#define MAXPATHLEN 256
 
 /* there are 2 levels of error logging/printing:
  *   BPLIST_LOG and BPLIST_LOG_VERBOSE
@@ -227,7 +227,7 @@ static value_ptr extract_array(bplist_info_ptr bplist, uint64_t offset);
 static value_ptr extract_dictionary(bplist_info_ptr bplist, uint64_t offset);
 
 
-value_ptr value_create()
+value_ptr value_create(void)
 {
     value_ptr value = (value_ptr) allocate(sizeof(value_node));
     return value;

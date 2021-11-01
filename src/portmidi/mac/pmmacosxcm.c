@@ -582,7 +582,7 @@ static PmError midi_create_virtual(struct pm_internal_struct *midi,
         pm_free(info);
         return pmHostError;
     }
-    id = pm_add_device("CoreMIDI", name, is_input, endpoint, 
+    id = pm_add_device("CoreMIDI", name, is_input, (void *) (long)endpoint,
                        (is_input ? &pm_macosx_in_dictionary :
                                    &pm_macosx_out_dictionary));
     if (id < 0) {  /* error -- out of memory? */
